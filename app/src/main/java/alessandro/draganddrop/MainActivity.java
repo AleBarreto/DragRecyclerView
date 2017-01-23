@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements CallbackItemTouch
 
     @Override
     public void itemTouchOnMove(int oldPosition, int newPosition) {
-        Collections.swap(mList,oldPosition,newPosition); // change position
+        mList.add(newPosition,mList.remove(oldPosition));// change position
         myAdapterRecyclerView.notifyItemMoved(oldPosition, newPosition); //notifies changes in adapter, in this case use the notifyItemMoved
     }
 }
